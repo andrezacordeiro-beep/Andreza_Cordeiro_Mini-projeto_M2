@@ -1,3 +1,4 @@
+![1789686065195](image/readme/1789686065195.png)
 
 # Mini-Projeto Avaliativo: Visualização de Dados e Business Intelligence
 
@@ -13,41 +14,42 @@
 
 ## 🎯 1. Objetivo do Projeto
 
-Desenvolver uma solução analítica integrada de Visualização de Dados e Business Intelligence para acompanhar, monitorar e explorar as compras públicas de medicamentos e dispositivos médicos registradas no Banco de Preços em Saúde (BPS) entre os anos de 2020 e 2026^^. O projeto traduz grandes volumes de dados públicos do Ministério da Saúde em indicadores estratégicos, auxiliando no planejamento, controle e eficiência dos gastos públicos no setor da saúde.
+Desenvolver uma solução analítica integrada de Visualização de Dados e Business Intelligence para acompanhar, monitorar e explorar as compras públicas de medicamentos e dispositivos médicos registradas no Banco de Preços em Saúde (BPS) entre os anos de 2020 e 2026. O projeto traduz grandes volumes de dados públicos do Ministério da Saúde em indicadores estratégicos, auxiliando no planejamento, controle e eficiência dos gastos públicos no setor da saúde.
 
 ## 🏛️ 2. Contextualização do Problema
 
 A gestão eficiente dos recursos públicos na saúde enfrenta desafios complexos devido ao elevado volume financeiro, à pluralidade de fornecedores, às diversas modalidades licitatórias e à ampla variedade de produtos.
 
-O Banco de Preços em Saúde (BPS) centraliza informações de compras públicas e privadas de medicamentos e dispositivos médicos para subsidiar entes federados e instituições de saúde em negociações mais vantajosas^^. Cabe ressaltar que variações de preços unitários não devem ser interpretadas de forma automatizada como sobrepreço ou irregularidades, pois refletem especificidades de fabricante, apresentação, escala, modalidade de compra e sazonalidade.
+O Banco de Preços em Saúde (BPS) centraliza informações de compras públicas e privadas de medicamentos e dispositivos médicos para subsidiar entes federados e instituições de saúde em negociações mais vantajosas. Cabe ressaltar que variações de preços unitários não devem ser interpretadas de forma automatizada como sobrepreço ou irregularidades, pois refletem especificidades de fabricante, apresentação, escala, modalidade de compra e sazonalidade.
 
 ## 🔗 3. Fonte dos Dados
 
 * **Plataforma:** Portal Brasileiro de Dados Abertos do Ministério da Saúde^^.
-* **Base Utilizada:** Banco de Preços em Saúde — BPS^^ (COGPS/CGCUSTOS/DESID/SE/MS).
-* **Período Analisado:** Arquivos em formato `.csv` consolidados de 2020 a 2026^^.
-* **Dicionário de Dados Oficial:** *Dicionário do BPS — Dados Abertos*^^.
+* **Base Utilizada:** Banco de Preços em Saúde — BPS (COGPS/CGCUSTOS/DESID/SE/MS).
+* **Período Analisado:** Arquivos em formato `.csv` consolidados de 2020 a 2026.
+* **Dicionário de Dados Oficial:** Dicionário do BPS — Dados Abertos.
 
 ## 🔄 4. Procedimentos de Download e Concatenação
 
-* **Aquisição:** Download dos arquivos `.csv` anuais correspondentes ao período de 2020 a 2026^^.
-* **Padronização:** Uniformização de nomes de colunas, formatação de datas (campos `Compra` e `Inserção`), ajuste de tipos numéricos e tratamento de problemas de codificação de caracteres (*encoding* e acentuação)^^.
-* **Tratamento de Dados:** Identificação e expurgo de colunas desnecessárias, valores nulos ou registros duplicados.
-* **Consolidação:** Mesclagem ( *append/merge* ) de todas as bases anuais em um único arquivo mestre histórico denominado `BPS_20_26_AndrezaTNCordeiro.csv` por meio do Power Query.
+- **Aquisição:** Download dos arquivos `.csv` anuais correspondentes ao período de 2020 a 2026 no URL [dadosabertos.saude.gov.br/dataset/bps](https://dadosabertos.saude.gov.br/dataset/bps).
+
+* **Padronização:** Executada integralmente dentro do Power Query, compreendendo a uniformização de nomes de colunas, formatação de datas (campos `Compra` e `Inserção`), ajuste de tipos numéricos e tratamento de problemas de codificação de caracteres (*encoding* e acentuação).
+* **Tratamento de Dados:** Identificação e expurgo de colunas desnecessárias, valores nulos ou registros duplicados realizados via Power Query.
+* **Consolidação:** Empilhamento (*Append*) de todas as bases anuais em um único arquivo mestre histórico denominado `BPS_20_26_AndrezaTNCordeiro.csv` por meio do Power Query.
 
 ## 📋 5. Descrição das Principais Colunas Utilizadas (Baseado no Dicionário Oficial)
 
-* **Ano Compra:** Ano da compra informada pela instituição compradora^^.
-* **Data de Compra / Data de Inserção:** Data da transação e data em que a instituição inseriu as informações no sistema^^.
-* **Preço Total:** Preço unitário multiplicado pela quantidade de itens, representando o valor global da aquisição^^.
-* **Qtd Itens Comprados:** Quantidade do item adquirida na transação^^.
-* **Preço Unitário:** Valor pago por unidade do item adquirido, com base no valor efetivamente negociado^^.
-* **UF / Município Instituição:** Unidade Federativa e município onde a instituição compradora está localizada^^.
-* **Instituição Compradora :** Nome  da entidade compradora (hospitais, secretarias de saúde, etc.)^^.
-* **Fornecedor :** Nome 	da empresa responsável pela venda e entrega do produto^^.
-* **Modalidade da Compra:** Tipo de procedimento licitatório ou formato jurídico utilizado (ex: Pregão, Dispensa, etc.)^^.
-* **Tipo de Compra:** Contexto ou natureza da aquisição (ex: regular, emergencial, etc.)^^.
-* **Código do item:** Identificador único e descrição padronizada do item conforme o Catálogo de Materiais^^.
+* **Ano Compra:** Ano da compra informada pela instituição compradora.
+* **Data de Compra / Data de Inserção:** Data da transação e data em que a instituição inseriu as informações no sistema.
+* **Preço Total:** Preço unitário multiplicado pela quantidade de itens, representando o valor global da aquisição.
+* **Qtd Itens Comprados:** Quantidade do item adquirida na transação.
+* **Preço Unitário:** Valor pago por unidade do item adquirido, com base no valor efetivamente negociado.
+* **UF / Município Instituição:** Unidade Federativa e município onde a instituição compradora está localizada.
+* **Instituição Compradora :** Nome  da entidade compradora (hospitais, secretarias de saúde, etc.).
+* **Fornecedor :** Nome 	da empresa responsável pela venda e entrega do produto.
+* **Modalidade da Compra:** Tipo de procedimento licitatório ou formato jurídico utilizado (ex: Pregão, Dispensa, etc.).
+* **Tipo de Compra:** Contexto ou natureza da aquisição (ex: regular, emergencial, etc.).
+* **Código do item:** Identificador único e descrição padronizada do item conforme o Catálogo de Materiais.
 * **Classe do Item:** Contexto ou natureza da utilização o material (ex: vestuário hospitalar, mobiliário, equipamentos, utensílios e etc)
 * 
 
@@ -64,7 +66,7 @@ O dashboard foi estruturado contemplando os indicadores estratégicos mínimos e
 
 Ex:
 
-![1789529074430](image/readme/1789529074430.png)
+![1789686150278](image/readme/1789686150278.png)
 
 ## 🖼️ 7. Visualizações do Dashboard
 
@@ -72,9 +74,10 @@ O painel interativo conta com filtros dinâmicos ( Ano ,  *Mês* ,  *UF* ,  Comp
 
 - O gráfico de pizza integrado ao **Dashboard Analítico do BPS (2020–2026)** tem como principal objetivo fornecer uma visão macro e percentual da composição dos dados de preços em saúde ao longo da série histórica. Permite acompanhar como a proporção entre os diferentes segmentos evoluiu ano a ano, destacando mudanças de comportamento até 2026.
 
-![1789528470490](image/readme/1789528470490.png)
+![1789686210160](image/readme/1789686210160.png)
 
 * **Evolução de Valores Registrados em Compras (Série Temporal):** Gráfico de linhas demonstrando a oscilação anual do montante financeiro (`Preço Total` por  *Ano Compra* ):
+
   * **2020:** R$ 310,07 bilhões
   * **2021:** R$ 914,28 bilhões
   * **2022:** R$ 1,87 trilhão
@@ -83,7 +86,7 @@ O painel interativo conta com filtros dinâmicos ( Ano ,  *Mês* ,  *UF* ,  Comp
   * **2025:** R$ 2,00 trilhões (20,1%)
   * **2026:** R$ 915,38 bilhões (9,2%)
 
-![1789527702414](image/readme/1789527702414.png)
+![1789686389445](image/readme/1789686389445.png)
 
 * **Valor Total por UF (Ranking dos Principais Estados):**
 
@@ -94,32 +97,27 @@ O painel interativo conta com filtros dinâmicos ( Ano ,  *Mês* ,  *UF* ,  Comp
   * **RS (Rio Grande do Sul):** R$ 274.899.420.182
   * **RJ (Rio de Janeiro):** R$ 192.631.930.013
   * **AL (Alagoas):** R$ 181.139.813.615
-  * 
-* 
-* 
-* 
-* 
-* 
-* ![1789527791325](image/readme/1789527791325.png)
-* **Valor Total por Tipo de Compra:**
 
-  * **Regular/Administrativa:** Representa a esmagadora maioria dos recursos (próximo de R$ 9,9 trilhões).
-  * **Demais Classificações:** Expressas em menor escala no volume global comparativo.
+![1789686461069](image/readme/1789686461069.png)
 
-![1789527948724](image/readme/1789527948724.png)
+**Valor Total por Tipo de Compra:**
+
+* * **Regular/Administrativa:** Representa a esmagadora maioria dos recursos (próximo de R$ 9,9 trilhões).
+  * **Judicial:** Expressa em menor escala no volume global comparativo.
+
+![1789686502308](image/readme/1789686502308.png)
 
 * **Modalidades de Compra mais Utilizadas:**
   * **Pregão:** R$ 8.974.839.711.407
   * **Registro de Preços:** R$ 910.889.197.900
   * **Dispensa de Licitação:** R$ 43.352.010.160
-  * *Demais modalidades:* Inexigibilidade, Leilão, Tomada de Preços, Concorrência, Concurso, Convite e Diálogo Competitivo.
-* 
+  * **Demais modalidades***:*** Inexigibilidade, Leilão, Tomada de Preços, Concorrência, Concurso, Convite e Diálogo Competitivo.
 
-![1789528048215](image/readme/1789528048215.png)
+![1789686718538](image/readme/1789686718538.png)
 
 * **Instituições Compradoras e Fornecedores por UF:** Gráfico de colunas comparando o volume de atuação e capilaridade dos fornecedores e instituições nas principais Unidades Federativas (com destaque expressivo para PR, SP, RO, RS e ES).
 
-![1789528111864](image/readme/1789528111864.png)
+![1789686796133](image/readme/1789686796133.png)
 
 ## 📈 8. Principais Análises e Descobertas
 
