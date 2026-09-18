@@ -24,7 +24,7 @@ O Banco de Preços em Saúde (BPS) centraliza informações de compras públicas
 
 ## 🔗 3. Fonte dos Dados
 
-* **Plataforma:** Portal Brasileiro de Dados Abertos do Ministério da Saúde^^.
+* **Plataforma:** Portal Brasileiro de Dados Abertos do Ministério da Saúde.
 * **Base Utilizada:** Banco de Preços em Saúde — BPS (COGPS/CGCUSTOS/DESID/SE/MS).
 * **Período Analisado:** Arquivos em formato `.csv` consolidados de 2020 a 2026.
 * **Dicionário de Dados Oficial:** Dicionário do BPS — Dados Abertos.
@@ -35,7 +35,7 @@ O Banco de Preços em Saúde (BPS) centraliza informações de compras públicas
 
 * **Padronização:** Executada integralmente dentro do Power Query, compreendendo a uniformização de nomes de colunas, formatação de datas (campos `Compra` e `Inserção`), ajuste de tipos numéricos e tratamento de problemas de codificação de caracteres (*encoding* e acentuação).
 * **Tratamento de Dados:** Identificação e expurgo de colunas desnecessárias, valores nulos ou registros duplicados realizados via Power Query.
-* **Consolidação:** Empilhamento (*Append*) de todas as bases anuais em um único arquivo mestre histórico denominado `BPS_20_26_AndrezaTNCordeiro.csv` por meio do Power Query.
+* **Consolidação:** Empilhamento (*Append*) de todas as bases anuais em um único arquivo mestre histórico denominado `BPS_20_26_AndrezaTNCordeiro.csv` por meio do Power Query e posteriormente direcionando para montagem do dashboard no Data Studio (Looker).
 
 ## 📋 5. Descrição das Principais Colunas Utilizadas (Baseado no Dicionário Oficial)
 
@@ -46,7 +46,7 @@ O Banco de Preços em Saúde (BPS) centraliza informações de compras públicas
 * **Preço Unitário:** Valor pago por unidade do item adquirido, com base no valor efetivamente negociado.
 * **UF / Município Instituição:** Unidade Federativa e município onde a instituição compradora está localizada.
 * **Instituição Compradora :** Nome  da entidade compradora (hospitais, secretarias de saúde, etc.).
-* **Fornecedor :** Nome 	da empresa responsável pela venda e entrega do produto.
+* **Fornecedor :** Nome da empresa responsável pela venda e entrega do produto.
 * **Modalidade da Compra:** Tipo de procedimento licitatório ou formato jurídico utilizado (ex: Pregão, Dispensa, etc.).
 * **Tipo de Compra:** Contexto ou natureza da aquisição (ex: regular, emergencial, etc.).
 * **Código do item:** Identificador único e descrição padronizada do item conforme o Catálogo de Materiais.
